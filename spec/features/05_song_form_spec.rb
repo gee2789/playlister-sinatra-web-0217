@@ -7,7 +7,7 @@ describe "Song Forms" do
   let(:song_name) { "That One with the Guitar" }
   let!(:genre_1) { Genre.create(name: genre_1_name) }
   let!(:genre_2) { Genre.create(name: genre_2_name) }
-
+binding.pry
   describe "/songs/new" do
     before do
       visit "/songs/new"
