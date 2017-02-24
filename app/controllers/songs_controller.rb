@@ -6,12 +6,12 @@ class SongsController < ApplicationController
   end
 
   post '/songs' do
-
     # binding.pry
+    if artist.find_by_name(params["artist"]["name"]).nil?
     @songs = Song.create(name: params["song"]["name"])
     @artist = Artist.create(name: params["artist"]["name"])
     binding.pry
-    erb :'/songs/show'
+    erb :'/songs/:slug'
   end
 
   get '/songs/new' do
